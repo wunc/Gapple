@@ -16,23 +16,23 @@ class ToViewController: NSViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    pathsTableView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
+    pathsTableView.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
   }
 
-  override func keyDown(event:NSEvent) {
+  override func keyDown(with event:NSEvent) {
     let utils: Utils = Utils.instance
     let key: String = utils.getChar(event)
     switch key {
     case "j":
       let nr = nextRow()
-      pathsTableView.selectRowIndexes(NSIndexSet(index: nr), byExtendingSelection: false)
+      pathsTableView.selectRowIndexes(IndexSet(integer: nr), byExtendingSelection: false)
       pathsTableView.scrollRowToVisible(nr)
     case "k":
       let pr = prevRow()
-      pathsTableView.selectRowIndexes(NSIndexSet(index: pr), byExtendingSelection: false)
+      pathsTableView.selectRowIndexes(IndexSet(integer: pr), byExtendingSelection: false)
       pathsTableView.scrollRowToVisible(pr)
     default:
-      super.keyDown(event)
+      super.keyDown(with: event)
     }
   }
 
@@ -77,8 +77,8 @@ extension ToViewController: NSTableViewDataSource {
   }
   
   func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-    let cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
-    if tableColumn!.identifier == "PathColumn" {
+    let cellView: NSTableCellView = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as! NSTableCellView
+    if tableColumn!.identifier as NSString == "PathColumn" {
       let path = self.paths[row]
       cellView.textField!.stringValue = path
       return cellView
@@ -103,21 +103,21 @@ extension ToViewController: NSTableViewDelegate {
     (views[5] as! NSTextField).font = informativeTextFont
     alert.messageText = messageText
     alert.informativeText = "Select Mailbox"
-    alert.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
-    alert.addButtonWithTitle(NSLocalizedString("Cancel", comment: ""))
+    alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
+    alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
     alert.accessoryView = self.view
     let window = NSApp.mainWindow
-    alert.beginSheetModalForWindow(window!, completionHandler: { (returnCode) -> Void in
+    alert.beginSheetModal(for: window!, completionHandler: { (returnCode) -> Void in
       switch (returnCode) {
-      case NSAlertFirstButtonReturn:
+      case NSApplication.ModalResponse.alertFirstButtonReturn:
         if self.selectedPath() != nil {
           let path = self.selectedPath()!
           NSLog("PATH_SELECTED: " + path)
           let mailboxEntry: MailboxEntry = dict[path]!
           let mailbox = mailboxEntry.mailbox
-          sender.performSelector(selector, withObject: [mailbox])
+          sender.performSelector(inBackground: selector, with: [mailbox])
         }
-      case NSAlertSecondButtonReturn:
+      case NSApplication.ModalResponse.alertSecondButtonReturn:
         NSLog("CANCEL")
       default:
         NSLog("DEFAULT")

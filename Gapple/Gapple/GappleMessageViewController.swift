@@ -7,33 +7,24 @@ import AppKit
 import Cocoa
 import Foundation
 
-class GappleMessageViewController: NSObject {
-
-  override class func initialize() {
-
-    struct Static {
-      static var token: dispatch_once_t = 0
+@objc class GappleMessageViewController: NSObject {
+    @objc class func onLoad() {
+        Utils.instance.dispatchOnce(self, clazz: Clazz.MessageViewController)
     }
-
-    dispatch_once(&Static.token) {
-      let utils: Utils = Utils.instance
-      utils.dispatchOnce(self, clazz: Clazz.MessageViewController)
+    
+    @objc dynamic func swizKeyDown(_ event:NSEvent) {
+        let utils: Utils = Utils.instance
+        let key: String = utils.getChar(event)
+        
+        NSLog("\(Clazz.MessageViewController.rawValue): \(event)")
+        
+        switch key {
+        case "n":
+            self.swizKeyDown(utils.getEvent(self, withKey: Codes.ArrowRt.get()))
+        case "p":
+            self.swizKeyDown(utils.getEvent(self, withKey: Codes.ArrowLf.get()))
+        default:
+            self.swizKeyDown(event)
+        }
     }
-  }
-
-  dynamic func swizKeyDown(event:NSEvent) {
-    let utils: Utils = Utils.instance
-    let key: String = utils.getChar(event)
-
-    NSLog(Clazz.MessageViewController.rawValue + ": " + String(event))
-
-    switch key {
-    case "n":
-      self.swizKeyDown(utils.getEvent(self, withKey: Codes.ArrowRt.get()))
-    case "p":
-      self.swizKeyDown(utils.getEvent(self, withKey: Codes.ArrowLf.get()))
-    default:
-      self.swizKeyDown(event)
-    }
-  }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,9 @@
 		68303A2F1C0DE0BC0065B175 /* GappleMailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68303A2E1C0DE0BC0065B175 /* GappleMailTableView.swift */; };
 		68AE71A81C26043E0063E298 /* ToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AE71A61C26043E0063E298 /* ToViewController.swift */; };
 		68AE71A91C26043E0063E298 /* ToViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68AE71A71C26043E0063E298 /* ToViewController.xib */; };
-		68E216441C0AC98B00178EE7 /* Gapple.mailbundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1642B8D31FC32D69FBFFFA5 /* Gapple.mailbundle */; };
 		68E216461C0AC9EA00178EE7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E216451C0AC9EA00178EE7 /* CoreFoundation.framework */; };
-		68E2164C1C0D214300178EE7 /* Gapple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E2164B1C0D214300178EE7 /* Gapple.swift */; };
+		D183C7E121979523006AC905 /* Gapple.m in Sources */ = {isa = PBXBuildFile; fileRef = D183C7E021979523006AC905 /* Gapple.m */; };
+		D1C57F7A2197A11A007FC9E7 /* Gapple.mailbundle in Local Deploy */ = {isa = PBXBuildFile; fileRef = F1642B8D31FC32D69FBFFFA5 /* Gapple.mailbundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F1642041DDAB987766748440 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1642A755FFF388AB0A6EA99 /* AppleScriptObjC.framework */; };
 		F16420A35C12148024F28A30 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1642AD38C7329540C8B4746 /* Cocoa.framework */; };
 		F16420F913F131B51225E2EB /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16424F257FA944D97E475F1 /* AppKit.framework */; };
@@ -27,25 +27,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		68E216431C0AC96000178EE7 /* CopyFiles */ = {
+		D1C57F792197A0E7007FC9E7 /* Local Deploy */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "~/Desktop/test";
+			dstPath = "$(HOME)/Library/Mail/Bundles";
 			dstSubfolderSpec = 0;
 			files = (
-				68E216441C0AC98B00178EE7 /* Gapple.mailbundle in CopyFiles */,
+				D1C57F7A2197A11A007FC9E7 /* Gapple.mailbundle in Local Deploy */,
 			);
+			name = "Local Deploy";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		68303A2C1C0DD4710065B175 /* GappleMessageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GappleMessageViewer.swift; sourceTree = "<group>"; };
-		68303A2E1C0DE0BC0065B175 /* GappleMailTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GappleMailTableView.swift; sourceTree = "<group>"; };
+		68303A2E1C0DE0BC0065B175 /* GappleMailTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = GappleMailTableView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		68AE71A61C26043E0063E298 /* ToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
 		68AE71A71C26043E0063E298 /* ToViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToViewController.xib; sourceTree = "<group>"; };
 		68E216451C0AC9EA00178EE7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		68E2164B1C0D214300178EE7 /* Gapple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gapple.swift; sourceTree = "<group>"; };
+		D183C7DF21979523006AC905 /* Gapple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gapple-Bridging-Header.h"; sourceTree = "<group>"; };
+		D183C7E021979523006AC905 /* Gapple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gapple.m; sourceTree = "<group>"; };
 		F16420334E2CF312E5B8E311 /* GappleMessageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GappleMessageListController.swift; sourceTree = "<group>"; };
 		F164210D1C529E26A094302E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Gapple/Info.plist; sourceTree = "<group>"; };
 		F1642448A81F9B8746DDDC3C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -98,7 +100,6 @@
 		F16426D75CD597F622F74F21 /* Gapple */ = {
 			isa = PBXGroup;
 			children = (
-				68E2164B1C0D214300178EE7 /* Gapple.swift */,
 				68303A2C1C0DD4710065B175 /* GappleMessageViewer.swift */,
 				68303A2E1C0DE0BC0065B175 /* GappleMailTableView.swift */,
 				F16426106A96B338AE910ACB /* ShortcutService.swift */,
@@ -108,6 +109,8 @@
 				68AE71A71C26043E0063E298 /* ToViewController.xib */,
 				F1642448A81F9B8746DDDC3C /* Utils.swift */,
 				F16420334E2CF312E5B8E311 /* GappleMessageListController.swift */,
+				D183C7E021979523006AC905 /* Gapple.m */,
+				D183C7DF21979523006AC905 /* Gapple-Bridging-Header.h */,
 			);
 			path = Gapple;
 			sourceTree = "<group>";
@@ -142,7 +145,7 @@
 				F164284D43F7717E7A3576C4 /* Sources */,
 				F16429BBE515BEF276CBAE84 /* Frameworks */,
 				F1642F7D44A94B0B5A377294 /* Resources */,
-				68E216431C0AC96000178EE7 /* CopyFiles */,
+				D1C57F792197A0E7007FC9E7 /* Local Deploy */,
 			);
 			buildRules = (
 			);
@@ -160,11 +163,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "___ironfish___";
+				TargetAttributes = {
+					F164296990328DE5216C13BB = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = F1642A4E308A9BE983F985FC /* Build configuration list for PBXProject "Gapple" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -197,8 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E2164C1C0D214300178EE7 /* Gapple.swift in Sources */,
 				68303A2F1C0DE0BC0065B175 /* GappleMailTableView.swift in Sources */,
+				D183C7E121979523006AC905 /* Gapple.m in Sources */,
 				68AE71A81C26043E0063E298 /* ToViewController.swift in Sources */,
 				68303A2D1C0DD4710065B175 /* GappleMessageViewer.swift in Sources */,
 				F16421CE0D6462A6AC2F4885 /* ShortcutService.swift in Sources */,
@@ -220,19 +228,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Gapple.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Duncan DeVore (86HZZ428T8)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K2J4C9ZGZ4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -243,11 +262,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "~/Desktop/test";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks";
+				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.2;
+				WRAPPER_EXTENSION = mailbundle;
 			};
 			name = Release;
 		};
@@ -259,19 +284,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Gapple.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Duncan DeVore (86HZZ428T8)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K2J4C9ZGZ4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -288,44 +324,58 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "~/Desktop/test";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks";
+				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				WRAPPER_EXTENSION = mailbundle;
 			};
 			name = Debug;
 		};
 		F1642F5CAB418B79F56802E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Gapple.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Duncan DeVore (86HZZ428T8)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Gapple/Info.plist;
-				INSTALL_PATH = /Users/Ironfish/Desktop/test;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ironfish.Gapple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = mailbundle;
+				SWIFT_OBJC_BRIDGING_HEADER = "Gapple/Gapple-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		F1642F6A29CBBC05423A6771 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Gapple.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Duncan DeVore (86HZZ428T8)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Gapple/Info.plist;
-				INSTALL_PATH = /Users/Ironfish/Desktop/test;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ironfish.Gapple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = mailbundle;
+				SWIFT_OBJC_BRIDGING_HEADER = "Gapple/Gapple-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};

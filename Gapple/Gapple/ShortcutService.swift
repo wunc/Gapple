@@ -12,11 +12,11 @@ enum Masks {
   func get() -> CGEventFlags {
     switch self {
       case .AltCmd:
-        return CGEventFlags(rawValue: CGEventFlags.MaskAlternate.rawValue | CGEventFlags.MaskCommand.rawValue)!
+        return CGEventFlags(rawValue: CGEventFlags.maskAlternate.rawValue | CGEventFlags.maskCommand.rawValue)
       case .Cmd:
-        return CGEventFlags.MaskCommand
+        return CGEventFlags.maskCommand
       case .Shift:
-        return CGEventFlags.MaskShift
+        return CGEventFlags.maskShift
     }
   }
 }
@@ -97,7 +97,7 @@ class ShortcutService {
 
   func getShortcuts() -> String {
     var shorts: String = ""
-    let sortedKeys = Array(ShortcutDict.keys).sort(<)
+    let sortedKeys = Array(ShortcutDict.keys).sorted(by: <)
     for key in sortedKeys {
       let shortcut = ShortcutDict[key]
       shorts += shortcut!.name + shortcut!.desc + "\n"
@@ -148,7 +148,7 @@ class ShortcutService {
 //    return shorts
 //  }
 
-  func shortcutsAlert(sender:NSObject) {
+  func shortcutsAlert(_ sender:NSObject) {
     sender.eventDate = nil
     let alert:NSAlert = NSAlert()
     let views:[AnyObject] = alert.window.contentView!.subviews
@@ -158,42 +158,42 @@ class ShortcutService {
     (views[5] as! NSTextField).font = informativeTextFont
     alert.messageText = "Keyboard Shortcuts"
     alert.informativeText = getShortcuts()
-    alert.addButtonWithTitle(NSLocalizedString("Close", comment:""))
-    alert.beginSheetModalForWindow(NSApplication.sharedApplication().mainWindow!) {
+    alert.addButton(withTitle: NSLocalizedString("Close", comment:""))
+    alert.beginSheetModal(for: NSApplication.shared.mainWindow!) {
       responseCode in
-      if NSAlertFirstButtonReturn == responseCode {
+      if NSApplication.ModalResponse.alertFirstButtonReturn == responseCode {
         NSLog("FirstButton")
       }
     }
   }
 
-  func action(sender:NSObject, selector: Zelector) {
+  func action(_ sender:NSObject, selector: Zelector) {
     sender.eventDate = nil
     switch selector {
       case .archiveMessages:
-        sender.performSelector(Zelector.archiveMessages.get(), withObject: nil)
+        sender.perform(Zelector.archiveMessages.get(), with: nil)
       case .showComposeWindow:
-        sender.performSelector(Zelector.showComposeWindow.get(), withObject: nil)
+        sender.perform(Zelector.showComposeWindow.get(), with: nil)
       case .deleteMessages:
-        sender.performSelector(Zelector.deleteMessages.get(), withObject: nil)
+        sender.perform(Zelector.deleteMessages.get(), with: nil)
       case .forwardMessage:
-        sender.performSelector(Zelector.forwardMessage.get(), withObject: nil)
+        sender.perform(Zelector.forwardMessage.get(), with: nil)
       case .markAsNotJunkMail:
-        sender.performSelector(Zelector.markAsNotJunkMail.get(), withObject: nil)
+        sender.perform(Zelector.markAsNotJunkMail.get(), with: nil)
       case .markAsJunkMail:
-        sender.performSelector(Zelector.markAsJunkMail.get(), withObject: nil)
+        sender.perform(Zelector.markAsJunkMail.get(), with: nil)
       case .openMessages:
-        sender.performSelector(Zelector.openMessages.get(), withObject: nil)
+        sender.perform(Zelector.openMessages.get(), with: nil)
       case .markAsRead:
-        sender.performSelector(Zelector.markAsRead.get(), withObject: nil)
+        sender.perform(Zelector.markAsRead.get(), with: nil)
       case .replyMessage:
-        sender.performSelector(Zelector.replyMessage.get(), withObject: nil)
+        sender.perform(Zelector.replyMessage.get(), with: nil)
       case .replyAllMessage:
-        sender.performSelector(Zelector.replyAllMessage.get(), withObject: nil)
+        sender.perform(Zelector.replyAllMessage.get(), with: nil)
       case .toggleFlag:
-        sender.performSelector(Zelector.toggleFlag.get(), withObject: nil)
+        sender.perform(Zelector.toggleFlag.get(), with: nil)
       case .markAsUnread:
-        sender.performSelector(Zelector.markAsUnread.get(), withObject: nil)
+        sender.perform(Zelector.markAsUnread.get(), with: nil)
       default:
         NSLog("default")
     }
