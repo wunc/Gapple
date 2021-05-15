@@ -53,10 +53,11 @@ If you are not familiar with the `favorites bar`, see the following [instruction
 
 ## How to Install
 
-1. Download [Gapple.mailbundle.zip](build/Gapple.mailbundle.zip) located in the [build](build) directory, **note** if your building the bundle then you don't follow this step
+1. Compile (see instructions below)
 2. Enable `Mail.app` plugins: `defaults write com.apple.mail EnableBundles -bool true`, **note** you only need to do this once
-3. Expand `Gapple.mailbundle.zip`
-4. Copy `Gapple.mailbundle` to `~/Library/mail/bundles`, **note**: you may have to create the `bundles` folder
+3. **For macOS 11+ (Big Sur)**: Run `spctl --add ~/Library/Mail/Bundles/Gapple.mailbundle` to allow it to be loaded (because it's not code-signed).
+4. Open Mail.app > Preferences > General > Manage Plugins > check Gapple.mailbundle
+5. Click "Allow Access" if prompted for permissions.
 
 ### Plugin Compatibility Error
 
@@ -118,7 +119,7 @@ git clone https://github.com/ironfish/Gapple.git
 3. Choose `~/Desktop/Gapple` as the project
 4. Select `Build` from the `Product` menu
 
-This will generate `Gapple.mailbundle` in the `~/Desktop/test` folder. Follow [How to Install](#how-to-install) for installation.
+This will generate `Gapple.mailbundle` in the `~/Library/Mail/Bundles` folder. Follow [How to Install](#how-to-install) for installation.
 
 ## To Do
 
