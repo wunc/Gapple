@@ -72,5 +72,13 @@
 		<string>DAF41AB7-F9AD-4273-9934-C81C74705B69</string>
 		<string>1550C683-EA48-4036-B7CE-FB6F5D13EE02</string>
 	</array>
+	<key>Supported11.2PluginCompatibilityUUIDs</key>
+	<array>
+		<string>D985F0E4-3BBC-4B95-BBA1-12056AC4A531</string>
+	</array>
+	<key>Supported11.3PluginCompatibilityUUIDs</key>
+	<array>
+		<string>D985F0E4-3BBC-4B95-BBA1-12056AC4A531</string>
+	</array>
 </dict>
 </plist>
